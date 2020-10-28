@@ -3,6 +3,7 @@ import com.yrrhelp.grpc.linkGrpc;
 import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.testing.GrpcCleanupRule;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.runner.RunWith;
@@ -38,6 +39,7 @@ public class Test {
 
     @Rule
     public final GrpcCleanupRule grpcCleanup = new GrpcCleanupRule();
+    private static final Logger logger = Logger.getLogger(GRPCServer.class);
 
     @Before
     public void before() throws IOException {
@@ -56,7 +58,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(GOOGLE_URL).build());
 
-        System.out.println("googleURLTest results: " + "\n"
+        logger.info("googleURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -66,7 +68,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(GITHUB_URL).build());
 
-        System.out.println("gitHubURLTest results: " + "\n"
+        logger.info("gitHubURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -76,7 +78,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(STACK_URL).build());
 
-        System.out.println("stackURLTest results: " + "\n"
+        logger.info("stackURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -86,7 +88,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(YOUTUBE_URL).build());
 
-        System.out.println("youtubeURLTest results: " + "\n"
+        logger.info("youtubeURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -96,7 +98,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(BAELDUNG_URL).build());
 
-        System.out.println("googleURLTest results: " + "\n"
+        logger.info("googleURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -106,7 +108,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(ROZETKA_URL).build());
 
-        System.out.println("baeldungURLTest results: " + "\n"
+        logger.info("baeldungURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -116,7 +118,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(BIGL_URL).build());
 
-        System.out.println("biglURLTest results: " + "\n"
+        logger.info("biglURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -126,7 +128,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(ALIEXPRESS_URL).build());
 
-        System.out.println("aliExpressURLTest results: " + "\n"
+        logger.info("aliExpressURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -136,7 +138,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(GMAIL_URL).build());
 
-        System.out.println("gmailURLTest results: " + "\n"
+        logger.info("gmailURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -146,7 +148,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(RP5_URL).build());
 
-        System.out.println("rp5URLTest results: " + "\n"
+        logger.info("rp5URLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -156,7 +158,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(DJINNI_URL).build());
 
-        System.out.println("googleURLTest results: " + "\n"
+        logger.info("googleURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -176,7 +178,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(SINOPTIK_URL).build());
 
-        System.out.println("sinoptikURLTest results: " + "\n"
+        logger.info("sinoptikURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -186,7 +188,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(METEO_URL).build());
 
-        System.out.println("meteoURLTest results: " + "\n"
+        logger.info("meteoURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -196,7 +198,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(METEOPROG_URL).build());
 
-        System.out.println("meteoprogURLTest results: " + "\n"
+        logger.info("meteoprogURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -206,7 +208,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(PROM_URL).build());
 
-        System.out.println("promURLTest results: " + "\n"
+        logger.info("promURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -216,7 +218,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(UNIAN_URL).build());
 
-        System.out.println("unianURLTest results: " + "\n"
+        logger.info("unianURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -226,7 +228,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(UKRPOSHTA_URL).build());
 
-        System.out.println("ukrposhtaURLTest results: " + "\n"
+        logger.info("ukrposhtaURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -236,7 +238,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(REZKA_URL).build());
 
-        System.out.println("rezkaURLTest results: " + "\n"
+        logger.info("rezkaURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
@@ -246,7 +248,7 @@ public class Test {
         Link.APIResponse reply =
                 blockingStub.timeout(Link.LinkRequest.newBuilder().setURL(MVN_URL).build());
 
-        System.out.println("mvnURLTest results: " + "\n"
+        logger.info("mvnURLTest results: " + "\n"
                 + "code: " + reply.getCode() + "\n"
                 + "timeout: " + reply.getTimeout() + "s");
     }
