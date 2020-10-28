@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+option java_package = "com.yrrhelp.grpc";
+
+service link{
+    rpc timeout(LinkRequest)  returns (APIResponse);
+}
+
+message LinkRequest{
+       string URL = 1 ;
+}
+
+message APIResponse{
+      string code = 1;
+      string  timeout = 2;
+}
